@@ -185,126 +185,63 @@
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Annotation</h2>
-    <p>For each video frame, we provide detailed annotations at five levels:</p>
     <div class="container">
-      <style>
-        .info-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-          }
-        .info-section {
-        width: 48%; /* Adjusted width to make sections wider */
-        margin-bottom: 20px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-          }
-        .info-section h3 {
-        margin-bottom: 10px;
-          }
-        .info-section p {
-        margin-bottom: 5px;
-          }
-        .image-section {
-        margin-top: 20px;
-          }
-        .image-section img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-          }
-        .frame-level-info {
-        width: 100%; /* Added width to make the section full-width */
-          }
-        .frame-level-images {
-        display: flex; /* Added flex display to arrange images horizontally */
-        justify-content: space-between;
-          }
-        .frame-level-images img {
-        width: 30%; /* Adjusted width to make images smaller */
-          }
-        .assembly-manual-info {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-          }
-        .assembly-manual-info .info-section {
-        width: 48%;
-          }
-        .manual-level-info {
-        display: flex; /* Added flex display to arrange text and image side by side */
-        align-items: flex-start;
-          }
-        .manual-level-text {
-        flex: 1; /* Added flex property to make the text section flexible */
-        margin-right: 20px;
-          }
-        .manual-level-image {
-        flex: 1; /* Added flex property to make the image section flexible */
-          }
-      </style>
-      <div class="info-container">
-        <div class="info-section">
-          <h3><strong>Furniture Level Info</strong></h3>
+      <div class="section">
+          <h2>Furniture Level Info</h2>
           <p>Category: Bench</p>
           <p>Name: applaro</p>
           <p>Furniture IDs: ['90205182']</p>
           <p>Variants: []</p>
           <p>Furniture URLs: ['https://www.ikea.com/.../']</p>
           <p>Furniture Main Image URL: https://www.ikea....jpg</p>
-        </div>
-        <div class="info-section">
-          <h3><strong>Video Level Info</strong></h3>
+      </div>
+      <div class="section">
+          <h2>Video Level Info</h2>
           <p>Video URL: https://www.youtube.com/...</p>
           <p>Other Video URLs for the Same Furniture: </p>
           <p>Title: IKEA assembly instructions, APPLARO Bench</p>
           <p>Duration: 155</p>
           <p>Is_indoor: indoor</p>
-        </div>
-        <div class="assembly-manual-info">
-          <div class="info-section">
-            <h3><strong>Assembly Step Info</strong></h3>
-            <p>Step ID: 1</p>
-            <p>Step Start: 47.0</p>
-            <p>Step End: 62.1</p>
-            <p>Substep ID: 3</p>
-            <p>Substep Start: 62.04</p>
-            <p>Substep End: 62.1</p>
-          </div>
-          <div class="info-section manual-level-info">
-            <div class="manual-level-text">
-              <h3><strong>Manual Level Info</strong></h3>
-              <p>Manual Step ID: 1</p>
-              <p>Manual URLs: ['https://www.ikea.com/...=4.pdf']</p>
-              <p>Manual ID: AA-601524-4</p>
-              <p>Manual Parts: ['0,1,2', '3']</p>
-              <p>Manual Connections: [['0,1,2', '3']]</p>
-              <p>PDF Page: 4</p>
-            </div>
-            <div class="manual-level-image">
-              <img src="./assets/manual_mask.png" alt="Manual + Masks">
-            </div>
-          </div>
-        </div>
-        <div class="info-section frame-level-info">
-          <h3><strong>Frame Level Info</strong></h3>
+      </div>
+      <div class="section">
+          <h2>Assembly Step Info</h2>
+          <p>Step ID: 1</p>
+          <p>Step Start: 47.0</p>
+          <p>Step End: 62.1</p>
+          <p>Substep ID: 3</p>
+          <p>Substep Start: 62.04</p>
+          <p>Substep End: 62.1</p>
+      </div>
+      <div class="section">
+          <h2>Frame Level Info</h2>
           <p>Frame Time: 52.82</p>
           <p>Number of Camera Changes: 1</p>
           <p>Frame Parts: ['0,2', '1', '3']</p>
           <p>Frame ID: 1584</p>
           <p>Is Keyframe: False</p>
           <p>Is Frame Before Keyframe: False</p>
-          <div class="frame-level-images">
-            <img src="./assets/frame_img.png" alt="Frame Image">
-            <img src="./assets/Mask.png" alt="Masks">
-            <img src="./assets/pose.png" alt="Object Poses">
+          <div>
+              <img src="path_to_frame_image" alt="Frame Image">
+              <img src="path_to_masks" alt="Masks">
+              <img src="path_to_object_poses" alt="Object Poses">
           </div>
-        </div>
       </div>
-    </div>
+      <div class="section">
+          <h2>Manual Level Info</h2>
+          <p>Manual Step ID: 1</p>
+          <p>Manual URLs: ['https://www.ikea.com/...=4.pdf']</p>
+          <p>Manual ID: AA-601524-4</p>
+          <p>Manual Parts: ['0,1,2', '3']</p>
+          <p>Manual Connections: [['0,1,2', '3']]</p>
+          <p>PDF Page: 4</p>
+          <div>
+              <img src="path_to_manual_image" alt="Manual + Masks">
+          </div>
+      </div>
+  </div>
   </div>
 </section>
+
 <!-- <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Data Collection and Annotation</h2>
@@ -331,40 +268,44 @@
 </section> -->
 
 <section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">Applications</h2>
-    <p>The IKEA Video Manuals dataset showcases its versatility and practical relevance through four fundamental furniture analysis tasks:</p>
-    <ol>
-      <li>
-        <strong>Assembly Plan Generation</strong>
-        <p>This task focuses on predicting a hierarchical assembly plan by analyzing a sequence of video frames that depict the furniture assembly process. The dataset offers physically realistic assembly plans extracted from Internet videos, providing a more detailed and diverse set of assembly steps compared to plans derived solely from instruction manuals.</p>
-        <div class="image-container">
-          <figure>
-            <img src="./assets/assembly_plan_generation.png" alt="Assembly Plan Generation">
-            <figcaption>Fig. 6: Assembly plan generation results on the IKEA Video Manuals dataset.</figcaption>
-          </figure>
-        </div>
-      </li>
-      <li>
-        <strong>Part-Conditioned Segmentation</strong>
-        <p>The objective of part-conditioned segmentation is to generate pixel-wise segmentation masks for furniture sub-assemblies within the assembly process. The diverse videos in the dataset enable the evaluation of part segmentation methods in real-world scenarios. The results emphasize the challenges posed by occlusions, complex backgrounds, and textureless 3D shapes when detecting object parts in Internet videos.</p>
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Applications</h2>
+      <p>The IKEA Video Manuals dataset demonstrates its utility on four fundamental furniture analysis tasks:</p>
+      <ol>
+        <li>Assembly plan generation</li>
+        <div class="medium-image">
         <figure>
-          <img src="./assets/part_segmentation.png" alt="Part-Conditioned Segmentation">
+          <img src="./assets/assembly_plan_generation.png" alt="Assembly Plan Generation">
+          <figcaption>Fig. 6: Assembly plan generation results on the IKEA Video Manuals dataset.</figcaption>
+        </figure>
+      </div>
+        <!-- <li>Part-conditioned segmentation</li>
+        <figure>
+          <img src="path_to_your_part_segmentation_figure" alt="Part-Conditioned Segmentation">
           <figcaption>Fig. 7: Part-conditioned segmentation results on the IKEA Video Manuals dataset.</figcaption>
         </figure>
-      </li>
-      <li>
-        <strong>Part-Conditioned Pose Estimation</strong>
-        <p>Part-conditioned pose estimation aims to predict the 6D pose of a furniture sub-assembly in a video frame. Accurate estimation of 3D poses of furniture parts from each video frame is crucial for developing a grounded understanding of the assembly process.</p>
+        <li>Part-conditioned pose estimation</li>
         <figure>
-          <img src="./assets/part_pose_estimation.png" alt="Part-Conditioned Pose Estimation">
+          <img src="path_to_your_pose_estimation_figure" alt="Part-Conditioned Pose Estimation">
           <figcaption>Fig. 8: Part-conditioned pose estimation results on the IKEA Video Manuals dataset.</figcaption>
+        </figure> -->
+        <li>Part-conditioned segmentation and pose estimation</li>
+        <div class="medium-image">
+        <figure>
+          <img src="./assets/part_segmentation_pose_estimation.png" alt="Part-Conditioned Segmentation and Pose Estimation">
+          <figcaption>Fig. 7: Part-conditioned segmentation and pose estimation results on the IKEA Video Manuals dataset.</figcaption>
         </figure>
-      </li>
-      <li>
-        <strong>Shape Assembly with Instruction Videos</strong>
-        <p>Given a set of 3D parts and an instruction video, shape assembly with instruction videos aims to determine the 6D poses of the 3D parts to assemble them into a complete piece of furniture. The proposed modular video-based shape assembly pipeline incorporates keyframe detection, assembled part recognition, pose estimation, and iterative assembly. </p>
-  </div>
+        </div>
+        <li>Shape assembly with instruction videos</li>
+        <div class="smaller-image">
+          <figure>
+            <img src="./assets/Application4.png" alt="Shape Assembly with Instruction Videos">
+            <figcaption>Fig. 9: Shape assembly results using instruction videos from the IKEA Video Manuals dataset.</figcaption>
+          </figure>
+        </div>
+      </ol>
+      <p>For each application, the paper provides evaluation metrics and baseline methods, highlighting the challenges and opportunities for future research.</p>
+    </div>
 </section>
 
 <section class="section" id="BibTeX">

@@ -16,9 +16,7 @@ body {
 .image-container {
   max-height: 600px; /* Adjust the height as needed */
   overflow-y: auto;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 95%;
 }
 
 .image-container figure {
@@ -26,9 +24,8 @@ body {
 }
 
 .image-container img {
-  max-width: 100%;
+  max-width: 95%;
   height: auto;
-  
 }
 
 .dnerf {

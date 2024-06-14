@@ -333,11 +333,11 @@
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Applications</h2>
-    <p>The IKEA Video Manuals dataset showcases its versatility and practical relevance through four fundamental furniture analysis tasks:</p>
+    <p>The IKEA Video Manuals dataset demonstrates its utility on four fundamental furniture analysis tasks:</p>
     <ol>
       <li>
-        <strong>Assembly Plan Generation</strong>
-        <p>This task focuses on predicting a hierarchical assembly plan by analyzing a sequence of video frames that depict the furniture assembly process. The dataset offers physically realistic assembly plans extracted from Internet videos, providing a more detailed and diverse set of assembly steps compared to plans derived solely from instruction manuals.</p>
+        <strong>Assembly plan generation</strong>
+        <p>Assembly plan generation aims to predict a hierarchical assembly plan from a sequence of video frames depicting a furniture assembly process. The dataset presents physically realistic assembly plans extracted from Internet videos, providing more detailed and diverse assembly steps compared to plans derived from instruction manuals.</p>
         <div class="image-container">
           <figure>
             <img src="./assets/assembly_plan_generation.png" alt="Assembly Plan Generation">
@@ -346,24 +346,27 @@
         </div>
       </li>
       <li>
-        <strong>Part-Conditioned Segmentation</strong>
-        <p>The objective of part-conditioned segmentation is to generate pixel-wise segmentation masks for furniture sub-assemblies within the assembly process. The diverse videos in the dataset enable the evaluation of part segmentation methods in real-world scenarios. The results emphasize the challenges posed by occlusions, complex backgrounds, and textureless 3D shapes when detecting object parts in Internet videos.</p>
+        <strong>Part-conditioned segmentation</strong>
+        <p>Part-conditioned segmentation aims to predict pixel-wise segmentation masks for furniture sub-assemblies from the assembly process. The diverse videos in the dataset allow for evaluating the performance of part segmentation methods in real-world scenarios. Results highlight the challenges in detecting object parts in Internet videos due to occlusions, complex backgrounds, and textureless 3D shapes.</p>
         <figure>
           <img src="./assets/part_segmentation.png" alt="Part-Conditioned Segmentation">
           <figcaption>Fig. 7: Part-conditioned segmentation results on the IKEA Video Manuals dataset.</figcaption>
         </figure>
       </li>
       <li>
-        <strong>Part-Conditioned Pose Estimation</strong>
-        <p>Part-conditioned pose estimation aims to predict the 6D pose of a furniture sub-assembly in a video frame. Accurate estimation of 3D poses of furniture parts from each video frame is crucial for developing a grounded understanding of the assembly process.</p>
+        <strong>Part-conditioned pose estimation</strong>
+        <p>Part-conditioned pose estimation aims to predict the 6D pose of a furniture sub-assembly in a video frame. Estimating 3D poses of furniture parts from each video frame is essential for constructing a grounded understanding of the assembly process. Results indicate that existing methods struggle to accurately estimate poses from real-world videos in the dataset.</p>
         <figure>
           <img src="./assets/part_pose_estimation.png" alt="Part-Conditioned Pose Estimation">
           <figcaption>Fig. 8: Part-conditioned pose estimation results on the IKEA Video Manuals dataset.</figcaption>
         </figure>
       </li>
       <li>
-        <strong>Shape Assembly with Instruction Videos</strong>
-        <p>Given a set of 3D parts and an instruction video, shape assembly with instruction videos aims to determine the 6D poses of the 3D parts to assemble them into a complete piece of furniture. The proposed modular video-based shape assembly pipeline incorporates keyframe detection, assembled part recognition, pose estimation, and iterative assembly. </p>
+        <strong>Shape assembly with instruction videos</strong>
+        <p>Given a set of 3D parts and an instruction video, the goal is to predict the 6D poses for the 3D parts to assemble them into complete furniture. The proposed modular video-based shape assembly pipeline leverages keyframe detection, assembled part recognition, pose estimation, and iterative assembly. Results demonstrate the effectiveness of integrating video-based cues in the assembly process.</p>
+      </li>
+    </ol>
+    <p>For each application, the paper provides evaluation metrics and baseline methods, highlighting the challenges and opportunities for future research.</p>
   </div>
 </section>
 
