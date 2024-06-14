@@ -59,28 +59,28 @@
                 <span class="link-block">
                   <a href="path_to_your_paper.pdf" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
+                      <i class="fas fa-file-pdf"></i>
                     </span>
-                    <span>Paper</span>
+                    <span>Paper (Coming Soon)</span>
                   </a>
                 </span>
                 <!-- Code Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/your_repo" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://github.com/yunongLiu1/IKEA-Manuals-at-Work" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                        <i class="fab fa-github"></i>
+                      <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
-                    </a>
+                  </a>
                 </span>
                 <!-- Dataset Link. -->
                 <span class="link-block">
-                  <a href="path_to_dataset_download" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://github.com/yunongLiu1/IKEA-Manuals-at-Work" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                        <i class="far fa-images"></i>
+                      <i class="far fa-images"></i>
                     </span>
                     <span>Dataset</span>
-                    </a>
+                  </a>
                 </span>
               </div>
             </div>
@@ -93,9 +93,10 @@
 <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
+        <!-- Add a GIF -->
         <figure>
-          <img src="path_to_your_teaser_image" alt="IKEA Video Manuals Dataset Teaser">
-        </figure>
+          <img src="./assets/teaser.gif" alt="Teaser">
+          <figcaption>Fig. 1: One Example of the IKEA Video Manuals dataset.</figcaption>
       </div>
   
       <p>
@@ -104,14 +105,14 @@
     </div>
 </section>
 
-<section class="section">
+<!-- <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Video</h2>
       <div class="publication-video">
         <iframe src="./assets/ikea-video-figures-widened_video.m4v" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
     </div>
-</section>
+</section> -->
 
 <section class="section">
     <div class="container is-max-desktop">
@@ -123,7 +124,7 @@
     </div>
 </section>
 
-<section class="section">
+<!-- <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Key Features</h2>
       <ul>
@@ -134,20 +135,31 @@
         <li>Complexity in real-world videos, capturing challenges such as camera changes, occlusions, and diverse backgrounds</li>
       </ul>
     </div>
-</section>
+</section> -->
 
 
 
 
 
 <section class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3">Furniture Models</h2>
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Furniture Models</h2>
+    <p>The IKEA Video Manuals dataset includes 36 furniture models from 6 categories:</p>
+    <ul style="list-style-type: disc;">
+      <li>Chairs (20 types)</li>
+      <li>Tables (8 types)</li>
+      <li>Benches (3 types)</li>
+      <li>Desks (1 type)</li>
+      <li>Shelves (1 type)</li>
+      <li>3 miscellaneous items</li>
+    </ul>
+    <div class="image-container">
       <figure>
         <img src="./assets/allFurnitures.jpg" alt="All Furniture Models">
         <figcaption>Fig. 2: All furniture models included in the IKEA Video Manuals dataset.</figcaption>
       </figure>
     </div>
+  </div>
 </section>
 
 <!-- \begin{figure}[t]
@@ -161,24 +173,26 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3">Annotation</h2>
       <p>The IKEA Video Manuals dataset provides rich annotations at multiple levels:</p>
-      <ul>
+      <ul style="list-style-type: disc;">
         <li>Furniture-level annotations, including 3D models, part segmentation masks, and part poses</li>
         <li>Video-level annotations, including camera parameters and video segmentation</li>
         <li>Assembly step-level annotations, including hierarchical assembly trees</li>
         <li>Frame-level annotations, including 2D part segmentation masks and 3D part poses</li>
         <li>Manual-level annotations, including manual segmentation and part-conditioned pose estimation</li>
       </ul>
+      <div class="image-container">
       <figure>
         <img src="./assets/oneFrameExample_2.jpg" alt="One Frame Example">
         <figcaption>Fig. 5: Example of annotations provided for a single frame in the IKEA Video Manuals dataset.</figcaption>
       </figure>
+    </div>
     </div>
 
 <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Data Collection and Annotation</h2>
       <p>The IKEA Video Manuals dataset is built on top of the IKEA-Manual dataset and the IAW dataset. It collects 36 segmented 3D furniture models from the IKEA-Manual dataset and 98 associated assembly videos from the IAW dataset.</p>
-      <figure>
+      <!-- <figure>
         <img src="path_to_your_data_collection_figure" alt="Data Collection">
         <figcaption>Fig. 3: Data collection process combining 3D models, instruction manuals, and assembly videos.</figcaption>
       </figure>
@@ -189,7 +203,7 @@
         <li>3D poses of furniture parts in video frames</li>
         <li>Camera parameter estimation for each video segment</li>
         <li>Hierarchical assembly trees representing the assembly process</li>
-      </ul>
+      </ul> -->
       <figure>
         <img src="./assets/pipeline.jpg" alt="Annotation Pipeline">
         <figcaption>Fig. 4: Annotation pipeline for the IKEA Video Manuals dataset.</figcaption>
@@ -204,10 +218,10 @@
       <ol>
         <li>Assembly plan generation</li>
         <figure>
-          <img src="path_to_your_assembly_plan_generation_figure" alt="Assembly Plan Generation">
+          <img src="./assets/assembly_plan_generation.png" alt="Assembly Plan Generation">
           <figcaption>Fig. 6: Assembly plan generation results on the IKEA Video Manuals dataset.</figcaption>
         </figure>
-        <li>Part-conditioned segmentation</li>
+        <!-- <li>Part-conditioned segmentation</li>
         <figure>
           <img src="path_to_your_part_segmentation_figure" alt="Part-Conditioned Segmentation">
           <figcaption>Fig. 7: Part-conditioned segmentation results on the IKEA Video Manuals dataset.</figcaption>
@@ -216,10 +230,14 @@
         <figure>
           <img src="path_to_your_pose_estimation_figure" alt="Part-Conditioned Pose Estimation">
           <figcaption>Fig. 8: Part-conditioned pose estimation results on the IKEA Video Manuals dataset.</figcaption>
-        </figure>
+        </figure> -->
+        <li>Part-conditioned segmentation and pose estimation</li>
+        <figure>
+          <img src="./assets/part_segmentation_pose_estimation.png" alt="Part-Conditioned Segmentation and Pose Estimation">
+          <figcaption>Fig. 7: Part-conditioned segmentation and pose estimation results on the IKEA Video Manuals dataset.</figcaption>
         <li>Shape assembly with instruction videos</li>
         <figure>
-          <img src="path_to_your_shape_assembly_figure" alt="Shape Assembly with Instruction Videos">
+          <img src="./assets/Application4.png" alt="Shape Assembly with Instruction Videos">
           <figcaption>Fig. 9: Shape assembly results using instruction videos from the IKEA Video Manuals dataset.</figcaption>
         </figure>
       </ol>

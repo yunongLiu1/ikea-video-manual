@@ -13,14 +13,31 @@ body {
     margin-bottom: 5px;
 }
 
+.image-container {
+  max-height: 600px; /* Adjust the height as needed */
+  overflow-y: auto;
+  max-width: 100%;
+}
+
+.image-container figure {
+  display: inline-block;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
 .dnerf {
   font-variant: small-caps;
 }
 
-
+.annotation-list li {
+  font-weight: bold;
+}
 .teaser .hero-body {
   padding-top: 0;
-  padding-bottom: 3rem;
+  padding-bottom: -50px;
 }
 
 .teaser {
@@ -45,6 +62,8 @@ body {
 }
 
 .publication-header .hero-body {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .publication-title {
