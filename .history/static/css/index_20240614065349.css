@@ -87,21 +87,11 @@ body {
 .medium-image {
   width: 80%; /* Adjust the percentage value to your desired size */
   margin: 0 auto; /* Center the image horizontally */
-  /* Centering */
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-    
 }
 
 .medium-image img {
   width: 100%;
   height: auto;
-  /* Centering */
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-
 }
 
 .publication-venue {

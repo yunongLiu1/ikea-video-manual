@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IKEA Manuals at Work: 4D Grounding of Assembly Instructions on Internet Videos</title>
+    <title>IKEA Video Manuals Dataset</title>
   
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   
@@ -26,7 +26,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">IKEA Manuals at Work: 4D Grounding of Assembly Instructions on Internet Videos</h1>
+            <h1 class="title is-1 publication-title">IKEA Video Manuals Dataset</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://github.com/yunongLiu1/">Yunong Liu</a><sup>1</sup></span>,
@@ -96,7 +96,7 @@
   <section class="section">
     <h2 class="title is-3">Abstract</h2>
     <p>
-      Shape assembly is a ubiquitous task in daily life, integral for constructing complex 3D structures like IKEA furniture. While significant progress has been made in developing autonomous agents for shape assembly, existing datasets have not yet tackled the 4D grounding of assembly instructions in videos, essential for a holistic understanding of assembly in 3D space over time. We introduce IKEA Video Manuals, a dataset that features 3D models of furniture parts, instructional manuals, assembly videos from the Internet, and most importantly, annotations of dense spatio-temporal alignments between these data modalities. To demonstrate the utility of IKEA Video Manuals, we present four applications essential for shape assembly: assembly plan generation, part-conditioned segmentation, part-conditioned pose estimation, and furniture assembly based on instructional video manuals. For each application, we provide evaluation metrics and baseline methods. Through experiments on our annotated data, we highlight many challenges in grounding assembly instructions in videos to improve shape assembly.
+      Shape assembly is a ubiquitous task in daily life, integral for constructing complex 3D structures like IKEA furniture. While significant progress has been made in developing autonomous agents for shape assembly, existing datasets have not yet tackled the 4D grounding of assembly instructions in videos, essential for a holistic understanding of assembly in 3D space over time. We introduce \dataset, a dataset that features 3D models of furniture parts, instructional manuals, assembly videos from the Internet, and most importantly, annotations of dense spatio-temporal alignments between these data modalities. To demonstrate the utility of \dataset, we present four applications essential for shape assembly: assembly plan generation, part-conditioned segmentation, part-conditioned pose estimation, and furniture assembly based on instructional video manuals. For each application, we provide evaluation metrics and baseline methods. Through experiments on our annotated data, we highlight many challenges in grounding assembly instructions in videos to improve shape assembly.
   </p>
   </section>
   
@@ -214,7 +214,7 @@
         <li>Camera parameter estimation for each video segment</li>
         <li>Hierarchical assembly trees representing the assembly process</li>
       </ul> -->
-      <div class="medium-image">
+      <div class="smaller-image">
       <figure>
         <img src="./assets/pipeline.jpg" alt="Annotation Pipeline">
         <figcaption>Fig. 4: Annotation pipeline for the IKEA Video Manuals dataset.</figcaption>
@@ -229,12 +229,10 @@
       <p>The IKEA Video Manuals dataset demonstrates its utility on four fundamental furniture analysis tasks:</p>
       <ol>
         <li>Assembly plan generation</li>
-        <div class="medium-image">
         <figure>
           <img src="./assets/assembly_plan_generation.png" alt="Assembly Plan Generation">
           <figcaption>Fig. 6: Assembly plan generation results on the IKEA Video Manuals dataset.</figcaption>
         </figure>
-      </div>
         <!-- <li>Part-conditioned segmentation</li>
         <figure>
           <img src="path_to_your_part_segmentation_figure" alt="Part-Conditioned Segmentation">
@@ -246,12 +244,9 @@
           <figcaption>Fig. 8: Part-conditioned pose estimation results on the IKEA Video Manuals dataset.</figcaption>
         </figure> -->
         <li>Part-conditioned segmentation and pose estimation</li>
-        <div class="medium-image">
         <figure>
           <img src="./assets/part_segmentation_pose_estimation.png" alt="Part-Conditioned Segmentation and Pose Estimation">
           <figcaption>Fig. 7: Part-conditioned segmentation and pose estimation results on the IKEA Video Manuals dataset.</figcaption>
-        </figure>
-        </div>
         <li>Shape assembly with instruction videos</li>
         <div class="smaller-image">
           <figure>
