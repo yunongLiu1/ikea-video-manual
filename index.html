@@ -370,6 +370,46 @@
         <p>Given a set of 3D parts and an instruction video, shape assembly with instruction videos aims to determine the 6D poses of the 3D parts to assemble them into a complete piece of furniture. The proposed modular video-based shape assembly pipeline incorporates keyframe detection, assembled part recognition, pose estimation, and iterative assembly. </p> -->
   </div>
 </section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Challenges in Real-World Assembly Videos</h2>
+    <div class="columns is-multiline">
+      <div class="column is-half">
+        <figure class="image">
+          <img src="./assets/camera_changes.gif" alt="Camera Changes">
+          <figcaption>
+            <strong>Camera Changes:</strong> Camera changes are common in real-world assembly videos, introducing challenges for tracking and camera calibration.
+          </figcaption>
+        </figure>
+      </div>
+      <div class="column is-half">
+        <figure class="image">
+          <img src="./assets/heavy_occlusions.gif" alt="Heavy Occlusion">
+          <figcaption>
+            <strong>Heavy Occlusion:</strong> Occlusions are prevalent in assembly scenarios, especially when multiple parts are being assembled simultaneously, or when the camera is positioned close to the assembly area.
+          </figcaption>
+        </figure>
+      </div>
+      <div class="column is-half">
+        <figure class="image">
+          <img src="./assets/ambiguities.gif" alt="Construction Deconstruction">
+          <figcaption>
+            <strong>Construction Deconstruction:</strong> In real-world assembly scenarios, which is different from controlled environments, construction and deconstruction can be ambiguous. In the example shown, the user first assembles a part and then disassembles at 8s.
+          </figcaption>
+        </figure>
+      </div>
+      <div class="column is-half">
+        <figure class="image">
+          <img src="./assets/diverse_environment.gif" alt="Diverse Environment">
+          <figcaption>
+            <strong>Diverse Environment:</strong> Our dataset includes diverse assembly scenarios, such as multi-person assembly and outdoor assembly, which introduce additional challenges for tracking and pose estimation.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
