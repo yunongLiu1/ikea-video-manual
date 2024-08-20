@@ -114,7 +114,7 @@
       </div>
   
       <p>
-        The IKEA Video Manuals dataset is a large-scale multimodal dataset with high-quality, spatial-temporal alignments of step-by-step instructions, 3D object representations, and real-world video demonstrations from the Internet. It provides 34,441 annotated video frames, aligning 36 IKEA manuals with 98 assembly videos for 6 furniture categories.
+        The IKEA Video Manuals dataset is a multimodal dataset with high-quality, spatial-temporal alignments of step-by-step instructions, 3D object representations, and real-world video demonstrations from the Internet. It provides 34,441 annotated video frames, aligning 36 IKEA manuals with 98 assembly videos for 6 furniture categories.
       </p>
     </div>
 </section>
@@ -309,15 +309,15 @@
     </div>
   </div>
 </section>
-<!-- <section class="section">
+<section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Data Collection and Annotation</h2>
-      <p>The IKEA Video Manuals dataset is built on top of the IKEA-Manual dataset and the IAW dataset. It collects 36 segmented 3D furniture models from the IKEA-Manual dataset and 98 associated assembly videos from the IAW dataset.</p> -->
+      <p>The IKEA Video Manuals dataset is built on top of the IKEA-Manual dataset and the IAW dataset. It collects 36 segmented 3D furniture models from the IKEA-Manual dataset and 98 associated assembly videos from the IAW dataset.</p> 
       <!-- <figure>
         <img src="path_to_your_data_collection_figure" alt="Data Collection">
         <figcaption>Fig. 3: Data collection process combining 3D models, instruction manuals, and assembly videos.</figcaption>
-      </figure>
-      <p>The dataset provides extensive annotations, including:</p>
+      </figure> -->
+      <!-- <p>The dataset provides extensive annotations, including:</p>
       <ul>
         <li>Fine-grained temporal segmentation of videos based on the construction of each sub-assembly</li>
         <li>2D image segmentation masks for 3D parts in sampled frames</li>
@@ -325,14 +325,44 @@
         <li>Camera parameter estimation for each video segment</li>
         <li>Hierarchical assembly trees representing the assembly process</li>
       </ul> -->
-      <!-- <div class="medium-image">
+      <div class="medium-image">
       <figure>
         <img src="./assets/pipeline.jpg" alt="Annotation Pipeline">
         <figcaption>Fig. 4: Annotation pipeline for the IKEA Video Manuals dataset.</figcaption>
       </figure>
     </div>
     </div>
-</section> -->
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Pose Refinement</h2>
+    <div class="content">
+      <p>
+        Our pose refinement process improves the accuracy of 3D part poses in assembly videos:
+      </p>
+      <ol>
+        <li><strong>Initial Estimation:</strong> PnP provides a good 2D overlay but inaccurate 3D poses.</li>
+        <li><strong>Issue Identification:</strong> Side views reveal incorrect spatial relationships between parts.</li>
+        <li><strong>Refinement:</strong> Our process corrects 3D poses while maintaining 2D consistency.</li>
+      </ol>
+      <p>
+        This refinement is crucial for constructing physically valid assembly sequences and ensuring the final 3D model matches the real-world object.
+      </p>
+    </div>
+    <figure class="image">
+      <img src="./assets/refine_example.png" alt="Pose Refinement Process">
+      <figcaption>Pose refinement improves 3D accuracy while maintaining 2D consistency</figcaption>
+    </figure>
+
+      <h3 class="title is-4">More Examples</h3>
+      <figure>
+        <img src="./assets/refine_example.gif" alt="Pose Refinement">
+        <!-- <figcaption>Fig. 1: One Example of the IKEA Video Manuals dataset.</figcaption> -->
+    </div>
+
+  </div>
+</section>
 
 <section class="section">
   <div class="container is-max-desktop">
