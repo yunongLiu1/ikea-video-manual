@@ -348,28 +348,41 @@
     <h2 class="title is-3">Pose Refinement</h2>
     <div class="content">
       <p>
-        Our pose refinement process improves the accuracy of 3D part poses in assembly videos:
+        Our pose refinement processimproves the accuracy of 3D part poses in assembly videos. This process is crucial for ensuring physically valid assembly sequences and accurate 3D reconstructions.
       </p>
       <ol>
-        <li><strong>Initial Estimation:</strong> PnP provides a good 2D overlay but inaccurate 3D poses.</li>
-        <li><strong>Issue Identification:</strong> Side views reveal incorrect spatial relationships between parts.</li>
-        <li><strong>Refinement:</strong> Our process corrects 3D poses while maintaining 2D consistency.</li>
+        <li><strong>Initial Estimation:</strong> We start with the Perspective-n-Point (PnP) algorithm to estimate initial poses. While this provides a good 2D overlay, it often results in inaccurate 3D poses.</li>
+        <li><strong>Issue Identification:</strong> By viewing the scene from different angles, particularly side views, we reveal incorrect spatial relationships between parts that aren't apparent from the camera's perspective.</li>
+        <li><strong>Refinement Process:</strong> We've developed an interactive interface that allows annotators to:
+          <ul>
+            <li>Control the virtual camera using axis-aligned controls</li>
+            <li>View the 3D scene from different orthographic perspectives</li>
+            <li>Refine part poses by rotating and translating them in 3D space</li>
+            <li>Compare the real-time 3D view with corresponding video frames</li>
+          </ul>
+        </li>
+        <li><strong>Relative Pose Accuracy:</strong> To improve the accuracy of relative poses, parts that appear together in a video frame are annotated simultaneously, with a visualization of their 3D locations.</li>
+        <li><strong>Temporal Smoothness:</strong> We initialize part poses with poses from the previous frame to improve the temporal smoothness of part trajectories.</li>
       </ol>
-      <p>
-        This refinement is crucial for constructing physically valid assembly sequences and ensuring the final 3D model matches the real-world object.
-      </p>
+      
     </div>
     <figure class="image">
       <img src="./assets/refine_example2.png" alt="Pose Refinement Process">
-      <figcaption>Pose refinement improves 3D accuracy while maintaining 2D consistency</figcaption>
+
+    </figure>
+    <p>
+      This refinement process is essential for constructing physically valid assembly sequences and ensuring the final 3D model accurately matches the real-world object. It addresses key challenges in 3D pose estimation from 2D internet videos, particularly in complex assembly scenarios with multiple interacting parts.
+    </p>
+
+    <h3 class="title is-4">More Examples</h3>
+    <figure>
+      <img src="./assets/refine_example.gif" alt="Pose Refinement">
+
     </figure>
 
-      <h3 class="title is-4">More Examples</h3>
-      <figure>
-        <img src="./assets/refine_example.gif" alt="Pose Refinement">
-        <!-- <figcaption>Fig. 1: One Example of the IKEA Video Manuals dataset.</figcaption> -->
-    </div>
-
+    <p>
+      This animation shows the assembly process in 4D from the front and side views before and after pose refinement. The relative poses between objects are significantly improved after refinement, leading to a more accurate 3D reconstruction of the final assembly.  This is particularly important for complex furniture items with multiple interacting parts, where small errors can compound into significant misalignments in the final assembly.
+    </p>
   </div>
 </section>
 
@@ -404,9 +417,116 @@
           <!-- <figcaption>Fig. 8: Part-conditioned pose estimation results on the IKEA Video Manuals dataset.</figcaption> -->
         </figure>
       </li>
-      <!-- <li> -->
-        <!-- <strong>Shape Assembly with Instruction Videos</strong>
-        <p>Given a set of 3D parts and an instruction video, shape assembly with instruction videos aims to determine the 6D poses of the 3D parts to assemble them into a complete piece of furniture. The proposed modular video-based shape assembly pipeline incorporates keyframe detection, assembled part recognition, pose estimation, and iterative assembly. </p> -->
+      <li>
+        <strong>Mask Tracking</strong>
+        <p>We evaluated two state-of-the-art mask tracking models, SAM2 and Cutie, on our dataset. Our analysis reveals significant challenges that these models face in real-world assembly scenarios.</p>
+        
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+          <thead>
+            <tr>
+              <th>Dataset</th>
+              <th>SAM2 (Hiera-L) J&F</th>
+              <th>Cutie-base J&F</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Our Dataset</td>
+              <td>0.4109</td>
+              <td>0.1873</td>
+            </tr>
+            <tr>
+              <td>MOSE</td>
+              <td>0.772</td>
+              <td>0.699</td>
+            </tr>
+            <tr>
+              <td>DAVIS 2017 val</td>
+              <td>0.916</td>
+              <td>0.879</td>
+            </tr>
+            <tr>
+              <td>SA-V val</td>
+              <td>0.756</td>
+              <td>0.607</td>
+            </tr>
+            <tr>
+              <td>YouTubeVOS 2019 val</td>
+              <td>0.891</td>
+              <td>0.870</td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <ul>
+          <li>Both models show significant performance drops on our dataset compared to existing benchmarks (45-55% for SAM2, 69-79% for Cutie).</li>
+          <li>Our dataset presents unique challenges not captured in current benchmarks, including MOSE and SA-V, which were designed to be more difficult than standard datasets.</li>
+          <li>The substantial performance gap highlights the potential of our dataset to drive advancements in video object segmentation research.</li>
+        </ul>
+      
+        <p>Error Analysis:</p>
+        <ul>
+          <li><strong>Camera Changes:</strong> Both models struggle with abrupt camera movements, often losing track of the object of interest.</li>
+          <li><strong>Similar Appearances:</strong> In assembly scenarios with multiple similar parts, the models often confuse different parts, leading to tracking errors.</li>
+          <!-- <li><strong>Occlusions:</strong> The models have difficulty re-identifying objects after they've been occluded, especially in cluttered assembly environments.</li>
+          <li><strong>Small Objects:</strong> Tracking performance degrades significantly for smaller parts, which are common in furniture assembly.</li>
+          <li><strong>Long-term Consistency:</strong> Both models struggle to maintain consistent tracking over extended periods, which is crucial for complete assembly sequences.</li> -->
+        </ul>
+      
+        <div class="columns is-multiline">
+          <div class="column is-one-third">
+            <figure class="image">
+              <img src="./assets/gt_cam_change.gif" alt="Ground Truth Camera Changes">
+              <figcaption>
+                <strong>Ground Truth: Camera Changes</strong>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column is-one-third">
+            <figure class="image">
+              <img src="./assets/cutie_cam_change.gif" alt="Cutie Camera Changes">
+              <figcaption>
+                <strong>Cuties: Camera Changes</strong> Cuties successfully tracks some portion of the furniture piece after camera changes, but loses track of the rest.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column is-one-third">
+            <figure class="image">
+              <img src="./assets/sam2_cam_change.gif" alt="SAM2 Camera Changes">
+              <figcaption>
+                <strong>SAM2: Camera Changes</strong> The model loses track after abrupt camera movement.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column is-one-third">
+            <figure class="image">
+              <img src="./assets/gt_similar_appearance.gif" alt="Ground Truth Similar Appearance">
+              <figcaption>
+                <strong>Ground Truth: Similar Appearance</strong> 
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column is-one-third">
+            <figure class="image">
+              <img src="./assets/cutie_similar_appearance.gif" alt="Cutie Similar Appearance">
+              <figcaption>
+                <strong>Cuties: Similar Appearance</strong> The model fail to track the pad at top of the chair.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column is-one-third">
+            <figure class="image">
+              <img src="./assets/sam2_similar_appearance.gif" alt="SAM2 Similar Appearance">
+              <figcaption>
+                <strong>SAM2: Similar Appearance</strong> SAM2 fails to track some parts of the chair.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </li>
+      <li>
+        <strong>Shape Assembly with Instruction Videos</strong>
+        <p>Given a set of 3D parts and an instruction video, shape assembly with instruction videos aims to determine the 6D poses of the 3D parts to assemble them into a complete piece of furniture. The proposed modular video-based shape assembly pipeline incorporates keyframe detection, assembled part recognition, pose estimation, and iterative assembly. </p> 
   </div>
 </section>
 <section class="section">
