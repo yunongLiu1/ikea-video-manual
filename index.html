@@ -38,11 +38,15 @@
     <li><a href="#dataset-overview">Dataset Overview</a></li>
     <li><a href="#furniture-models">Furniture Models</a></li>
     <li><a href="#annotation">Annotation</a></li>
-    <li><a href="#environments"><span class="new-label-navbar">NEW</span> Environments </a></li>
+    <!-- <li><a href="#environments"><span class="new-label-navbar">NEW</span> Environments </a></li> -->
+    <li><a href="#environments"> Environments </a></li>
     <li><a href="#data-collection">Data Collection and Annotation</a></li>
-    <li><a href="#pose-refinement"><span class="new-label-navbar">NEW</span> Pose Refinement </a></li>
-    <li><a href="#applications"><span class="new-label-navbar">NEW</span> Applications</a></li>
-    <li><a href="#challenges"><span class="new-label-navbar">NEW</span> Real-World Challenges</a></li>
+    <!-- <li><a href="#pose-refinement"><span class="new-label-navbar">NEW</span> Pose Refinement </a></li> -->
+     <li><a href="#pose-refinement"> Pose Refinement </a></li>
+    <!-- <li><a href="#applications"><span class="new-label-navbar">NEW</span> Applications</a></li> -->
+     <li><a href="#applications"> Applications</a></li>
+    <!-- <li><a href="#challenges"><span class="new-label-navbar">NEW</span> Real-World Challenges</a></li> -->
+    <li><a href="#challenges"> Real-World Challenges</a></li>
   </ul>
 </nav>
 
@@ -56,14 +60,13 @@
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="http://yunongliu.com/">Yunong Liu</a><sup>1</sup></span>,
-              <span class="author-block">
-                <a href="http://weiyuliu.com">Weiyu Liu</a><sup>1</sup></span>,
-              <span class="author-block">
-                <a href="author3_website">Shubh Khanna</a><sup>1</sup></span>,
+    
               <span class="author-block">
                 <a href="https://ceyzaguirre4.github.io">Cristobal Eyzaguirre</a><sup>1</sup></span>,
               <span class="author-block">
                 <a href="https://limanling.github.io">Manling Li</a><sup>1</sup></span>
+                <span class="author-block">
+                  <a href="author3_website">Shubh Khanna</a><sup>1</sup></span>,
             </div>
 
             <div class="is-size-5 publication-authors">
@@ -73,6 +76,8 @@
                 <a href="author7_website">Vineeth Ravi</a><sup>2</sup></span>,
               <span class="author-block">
                 <a href="author8_website">Saumitra Mishra</a><sup>2</sup></span>,
+              <span class="author-block">
+                <a href="http://weiyuliu.com">Weiyu Liu</a><sup>1</sup></span>,
               <span class="author-block">
                 <a href="https://jiajunwu.com">Jiajun Wu</a><sup>1</sup></span>
             </div>
@@ -141,8 +146,7 @@
     
   <h2 class="title is-3">Abstract</h2>
   <p>
-    Shape assembly is a ubiquitous task in daily life, integral for constructing complex 3D structures like IKEA furniture. While significant progress has been made in developing autonomous agents for shape assembly, existing datasets have not yet tackled the 4D grounding of assembly instructions in videos, essential for a holistic understanding of assembly in 3D space over time. We introduce IKEA Video Manuals, a dataset that features 3D models of furniture parts, instructional manuals, assembly videos from the Internet, and most importantly, annotations of dense spatio-temporal alignments between these data modalities. To demonstrate the utility of IKEA Video Manuals, we present four applications essential for shape assembly: assembly plan generation, part-conditioned segmentation, part-conditioned pose estimation, and furniture assembly based on instructional video manuals. For each application, we provide evaluation metrics and baseline methods. Through experiments on our annotated data, we highlight many challenges in grounding assembly instructions in videos to improve shape assembly.
-</p>
+    Shape assembly is a ubiquitous task in daily life, integral for constructing complex 3D structures like IKEA furniture. While significant progress has been made in developing autonomous agents for shape assembly, existing datasets have not yet tackled the 4D grounding of assembly instructions in videos, essential for a holistic understanding of assembly in 3D space over time. We introduce IKEA Video Manuals, a dataset that features 3D models of furniture parts, instructional manuals, assembly videos from the Internet, and most importantly, annotations of dense spatio-temporal alignments between these data modalities. To demonstrate the utility of IKEA Video Manuals, we present five applications essential for shape assembly: assembly plan generation, part-conditioned segmentation, part-conditioned pose estimation, video object segmentation, and furniture assembly based on instructional video manuals. For each application, we provide evaluation metrics and baseline methods. Through experiments on our annotated data, we highlight many challenges in grounding assembly instructions in videos to improve shape assembly, including handling occlusions, varying viewpoints, and extended assembly sequences.</p>
 </section>
 
 <!-- <section class="section">
@@ -338,7 +342,7 @@
 <section id="environments" class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Environment (98 Videos)</h2>
-      <span class="new-label">NEW !</span>
+      <!-- <span class="new-label">NEW !</span> -->
 
       <video controls>
         <source src="./assets/dataset_overview.mp4" type="video/mp4">
@@ -374,7 +378,7 @@
 <section id="pose-refinement" class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Pose Refinement</h2>
-    <span class="new-label">NEW !</span>
+    <!-- <span class="new-label">NEW !</span> -->
     <div class="content">
       <p>
         Our pose refinement processimproves the accuracy of 3D part poses in assembly videos. This process is crucial for ensuring physically valid assembly sequences and accurate 3D reconstructions.
@@ -448,7 +452,7 @@
       </li>
       <li>
         <strong>Mask Tracking</strong>
-        <span class="new-label">NEW !</span>
+        <!-- <span class="new-label">NEW !</span> -->
 
         <p>We evaluated two state-of-the-art mask tracking models, SAM2 and Cutie, on our dataset. Our analysis reveals significant challenges that these models face in real-world assembly scenarios.</p>
         
@@ -563,7 +567,7 @@
 <section id="challenges" class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3">Challenges in Real-World Assembly Videos</h2>
-    <span class="new-label">NEW !</span>
+    <!-- <span class="new-label">NEW !</span> -->
     <div class="columns is-multiline">
       <div class="column is-half">
         <figure class="image">
